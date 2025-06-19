@@ -136,6 +136,7 @@ async function getAIResponse(userMessage) {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${API_CONFIG.apiKey}`,
+                'session': 2
                 // Algunos APIs usan 'X-API-Key' en lugar de 'Authorization'
                 // 'X-API-Key': API_CONFIG.apiKey
             },
@@ -159,7 +160,7 @@ async function getAIResponse(userMessage) {
         // Extraer el mensaje de la respuesta (ajusta según tu API)
         // Ejemplo para OpenAI: data.choices[0].message.content
         // Ejemplo genérico: data.response o data.message
-        return data.response || data.message || 'Lo siento, no pude generar una respuesta.';
+        return data.response || data.output || 'Lo siento, no pude generar una respuesta.';
         
     } catch (error) {
         console.error('Error en la petición a la API:', error);
