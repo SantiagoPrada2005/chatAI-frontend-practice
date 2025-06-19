@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta etiquetas: información sobre la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con IA - Práctica Frontend</title>
+    
+    <!-- Enlace al archivo CSS para los estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER: Encabezado de la página -->
+    <header class="chat-header">
+        <h1>💬 Chat con IA</h1>
+        <p>Práctica básica de HTML, CSS y JavaScript</p>
+    </header>
+
+    <!-- MAIN: Contenido principal de la página -->
+    <main class="chat-container">
+        <!-- Área donde aparecerán los mensajes -->
+        <div id="chat-messages" class="chat-messages">
+            <!-- Mensaje de bienvenida inicial -->
+            <div class="message ai-message">
+                <div class="message-content">
+                    <strong>🤖 IA:</strong> ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte?
+                </div>
+                <div class="message-time">Ahora</div>
+            </div>
+        </div>
+
+        <!-- Formulario para enviar mensajes -->
+        <form id="chat-form" class="chat-input-container">
+            <!-- Input donde el usuario escribe su mensaje -->
+            <input 
+                type="text" 
+                id="user-input" 
+                class="chat-input" 
+                placeholder="Escribe tu mensaje aquí..."
+                required
+            >
+            <!-- Botón para enviar el mensaje -->
+            <button type="submit" class="send-button">
+                📤 Enviar
+            </button>
+        </form>
+    </main>
+
+    <!-- FOOTER: Pie de página -->
+    <footer class="chat-footer">
+        <p>Proyecto educativo - Aprendiendo HTML, CSS y JavaScript</p>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript para la funcionalidad -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+🎓 EXPLICACIÓN DE CONCEPTOS:
+
+📌 SEMÁNTICA HTML:
+- <header>: Encabezado de la página
+- <main>: Contenido principal
+- <footer>: Pie de página
+- <form>: Formulario para enviar datos
+
+📌 CLASES:
+- Son identificadores reutilizables (class="nombre")
+- Se usan para aplicar estilos CSS a múltiples elementos
+- Ejemplo: class="message" se puede usar en varios mensajes
+
+📌 IDs:
+- Son identificadores únicos (id="nombre")
+- Solo debe haber uno por página
+- Se usan para JavaScript y estilos específicos
+- Ejemplo: id="chat-messages" identifica el área de mensajes
+
+📌 ATRIBUTOS/PARÁMETROS:
+- type="text": Define que el input acepta texto
+- placeholder="...": Texto que aparece cuando el input está vacío
+- required: Hace que el campo sea obligatorio
+- lang="es": Define el idioma de la página
+-->

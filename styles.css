@@ -1,0 +1,198 @@
+/* 
+🎨 ARCHIVO CSS - ESTILOS PARA EL CHAT
+
+Este archivo contiene todos los estilos visuales de nuestro chat.
+CSS significa "Cascading Style Sheets" (Hojas de Estilo en Cascada)
+*/
+
+/* ===== ESTILOS GLOBALES ===== */
+/* El asterisco (*) selecciona TODOS los elementos */
+* {
+    margin: 0;          /* Elimina márgenes por defecto */
+    padding: 0;         /* Elimina espaciado interno por defecto */
+    box-sizing: border-box;  /* Incluye bordes y padding en el tamaño total */
+}
+
+/* Estilos para todo el documento */
+body {
+    font-family: 'Arial', sans-serif;  /* Tipo de letra */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  /* Fondo degradado */
+    min-height: 100vh;  /* Altura mínima de toda la pantalla */
+    display: flex;      /* Flexbox para organizar elementos */
+    flex-direction: column;  /* Elementos en columna vertical */
+    color: #333;        /* Color del texto */
+}
+
+/* ===== HEADER (ENCABEZADO) ===== */
+.chat-header {
+    background: rgba(255, 255, 255, 0.95);  /* Fondo blanco semi-transparente */
+    padding: 20px;      /* Espaciado interno */
+    text-align: center; /* Texto centrado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+}
+
+.chat-header h1 {
+    color: #4a5568;     /* Color del título */
+    margin-bottom: 5px; /* Espacio debajo del título */
+    font-size: 2em;     /* Tamaño de fuente grande */
+}
+
+.chat-header p {
+    color: #718096;     /* Color del subtítulo */
+    font-size: 0.9em;   /* Tamaño de fuente más pequeño */
+}
+
+/* ===== CONTENEDOR PRINCIPAL DEL CHAT ===== */
+.chat-container {
+    flex: 1;            /* Ocupa todo el espacio disponible */
+    display: flex;      /* Flexbox */
+    flex-direction: column;  /* Elementos en columna */
+    max-width: 800px;   /* Ancho máximo */
+    margin: 20px auto;  /* Centrado horizontal con margen */
+    background: white;  /* Fondo blanco */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  /* Sombra */
+    overflow: hidden;   /* Oculta contenido que se desborde */
+}
+
+/* ===== ÁREA DE MENSAJES ===== */
+.chat-messages {
+    flex: 1;            /* Ocupa el espacio disponible */
+    padding: 20px;      /* Espaciado interno */
+    overflow-y: auto;   /* Scroll vertical si es necesario */
+    max-height: 400px;  /* Altura máxima */
+    background: #f8f9fa; /* Fondo gris claro */
+}
+
+/* ===== ESTILOS PARA MENSAJES ===== */
+.message {
+    margin-bottom: 15px; /* Espacio entre mensajes */
+    padding: 12px 16px;  /* Espaciado interno */
+    border-radius: 18px; /* Esquinas muy redondeadas */
+    max-width: 80%;      /* Ancho máximo del 80% */
+    word-wrap: break-word; /* Rompe palabras largas */
+}
+
+/* Mensajes de la IA (alineados a la izquierda) */
+.ai-message {
+    background: #e3f2fd;  /* Fondo azul claro */
+    border: 2px solid #2196f3;  /* Borde azul */
+    align-self: flex-start;  /* Alineado a la izquierda */
+}
+
+/* Mensajes del usuario (alineados a la derecha) */
+.user-message {
+    background: #e8f5e8;  /* Fondo verde claro */
+    border: 2px solid #4caf50;  /* Borde verde */
+    align-self: flex-end;   /* Alineado a la derecha */
+    margin-left: auto;      /* Empuja hacia la derecha */
+}
+
+/* Contenido del mensaje */
+.message-content {
+    margin-bottom: 5px;   /* Espacio debajo del contenido */
+    line-height: 1.4;     /* Altura de línea para mejor lectura */
+}
+
+/* Hora del mensaje */
+.message-time {
+    font-size: 0.75em;    /* Texto más pequeño */
+    color: #666;          /* Color gris */
+    text-align: right;    /* Alineado a la derecha */
+}
+
+/* ===== FORMULARIO DE ENTRADA ===== */
+.chat-input-container {
+    display: flex;        /* Flexbox horizontal */
+    padding: 20px;        /* Espaciado interno */
+    background: white;    /* Fondo blanco */
+    border-top: 1px solid #e0e0e0;  /* Línea superior */
+}
+
+/* Campo de texto para escribir mensajes */
+.chat-input {
+    flex: 1;              /* Ocupa todo el espacio disponible */
+    padding: 12px 16px;   /* Espaciado interno */
+    border: 2px solid #ddd;  /* Borde gris */
+    border-radius: 25px;  /* Esquinas redondeadas */
+    font-size: 16px;      /* Tamaño de fuente */
+    outline: none;        /* Sin borde de enfoque por defecto */
+    transition: border-color 0.3s;  /* Transición suave del borde */
+}
+
+/* Cuando el input está enfocado (seleccionado) */
+.chat-input:focus {
+    border-color: #4caf50;  /* Borde verde cuando está activo */
+}
+
+/* Botón de enviar */
+.send-button {
+    margin-left: 10px;    /* Espacio a la izquierda */
+    padding: 12px 20px;   /* Espaciado interno */
+    background: #4caf50;  /* Fondo verde */
+    color: white;         /* Texto blanco */
+    border: none;         /* Sin borde */
+    border-radius: 25px;  /* Esquinas redondeadas */
+    cursor: pointer;      /* Cursor de mano al pasar por encima */
+    font-size: 16px;      /* Tamaño de fuente */
+    transition: background-color 0.3s;  /* Transición suave del color */
+}
+
+/* Efecto hover (cuando pasas el mouse por encima) */
+.send-button:hover {
+    background: #45a049;  /* Verde más oscuro */
+}
+
+/* ===== FOOTER (PIE DE PÁGINA) ===== */
+.chat-footer {
+    background: rgba(255, 255, 255, 0.95);  /* Fondo semi-transparente */
+    padding: 15px;        /* Espaciado interno */
+    text-align: center;   /* Texto centrado */
+    color: #666;          /* Color gris */
+    font-size: 0.9em;     /* Texto más pequeño */
+}
+
+/* ===== DISEÑO RESPONSIVE (PARA MÓVILES) ===== */
+/* Cuando la pantalla es menor a 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    .chat-container {
+        margin: 10px;      /* Menos margen en móviles */
+        border-radius: 10px; /* Esquinas menos redondeadas */
+    }
+    
+    .message {
+        max-width: 90%;    /* Mensajes más anchos en móviles */
+    }
+    
+    .chat-header h1 {
+        font-size: 1.5em;  /* Título más pequeño en móviles */
+    }
+}
+
+/* 
+🎓 EXPLICACIÓN DE CONCEPTOS CSS:
+
+📌 SELECTORES:
+- .clase: Selecciona elementos con esa clase
+- #id: Selecciona el elemento con ese ID
+- elemento: Selecciona todos los elementos de ese tipo
+- *: Selecciona todos los elementos
+
+📌 PROPIEDADES BÁSICAS:
+- color: Color del texto
+- background: Color o imagen de fondo
+- padding: Espaciado interno
+- margin: Espaciado externo
+- border: Borde del elemento
+- font-size: Tamaño de la fuente
+
+📌 FLEXBOX:
+- display: flex: Convierte el elemento en un contenedor flexible
+- flex-direction: Dirección de los elementos (row/column)
+- justify-content: Alineación horizontal
+- align-items: Alineación vertical
+
+📌 RESPONSIVE DESIGN:
+- @media: Reglas que se aplican según el tamaño de pantalla
+- Permite que la página se vea bien en móviles y tablets
+*/
